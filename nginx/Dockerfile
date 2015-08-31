@@ -6,7 +6,7 @@ RUN mkdir c:\build\nginx\source &&\
   powershell -Command "Expand-Archive -Path C:\nginx-1.9.3.zip -DestinationPath C:\nginx -Force" &&\
   del c:\nginx-1.9.3.zip
 
-RUN echo hello docker indy! > C:\nginx\nginx-1.9.3\html\index.html
-COPY nginx_start.cmd /nginx_start.cmd
+COPY ./html /nginx/nginx-1.9.3/html/
 
-CMD /nginx_start.cmd
+WORKDIR /nginx/nginx-1.9.3
+CMD nginx.exe
