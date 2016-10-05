@@ -1,4 +1,4 @@
-FROM windowsservercore:latest
+FROM microsoft/windowsservercore:latest
 MAINTAINER Matt Bentley <mbentley@mbentley.net>
 
 RUN mkdir c:\build\nginx\source &&\
@@ -9,4 +9,5 @@ RUN mkdir c:\build\nginx\source &&\
 COPY ./html /nginx/nginx-1.9.3/html/
 
 WORKDIR /nginx/nginx-1.9.3
+EXPOSE 80
 CMD nginx.exe
