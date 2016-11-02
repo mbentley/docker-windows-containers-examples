@@ -9,14 +9,14 @@ if([string]::IsNullOrEmpty($env:PROTOCOL)) {
 
 # check to see if jenkins master was specified
 if([string]::IsNullOrEmpty($env:JENKINS_MASTER)) {
-  Write-Host "Please specify a Jenkins Master as your first parameter"
-  Write-Host "Usage: $MyInvocation.MyCommand.Name jenkins.example.com:8080 slave1"
+  Write-Host "Please specify the JENKINS_MASTER environment variable"
+  exit
 }
 
 # check and see if slave name was provided
 if([string]::IsNullOrEmpty($env:SLAVE_NAME)) {
-  Write-Host "Please specify a Jenkins Slave name your second parameter"
-  Write-Host "Usage: $MyInvocation.MyCommand.Name jenkins.example.com:8080 slave1"
+  Write-Host "Please specify the SLAVE_NAME environment variable"
+  exit
 }
 
 # download slave.jar if necessary
