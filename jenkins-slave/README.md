@@ -1,23 +1,21 @@
-jenkins-slave
-=============
+mbentley/win-jenkins-slave
+==========================
 
 docker image for jenkins slaves (jnlp) on Windows
 
 To build this image:
-`docker build -t jenkins-slave jenkins-slave`
-
-*Note*: It is expected that you have built the Java JRE image as `oracle-jre` found in the `orace-jre` subdirectory of this project
+`docker build -t mbentley/win-jenkins-slave .`
 
 Example usage (this is a work in progress so much of this will not work):
 
 ```
 docker run -d --name jenkins-slave \
-  -v jenkins-slave:/data \
+  -v jenkins-slave:c:\data \
   -e PROTOCOL=http \
   -e JENKINS_MASTER=jenkins.example.com:8080 \
   -e SLAVE_NAME=nodename \
   -e SECRET=secret \
-  jenkins-slave
+  mbentley/win-jenkins-slave
 ```
 
 ### Arguments

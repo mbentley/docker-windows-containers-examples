@@ -1,4 +1,4 @@
-FROM oracle-jre:latest
+FROM mbentley/win-oracle-jre7:latest
 
 RUN mkdir "%ProgramFiles%\docker" &&\
   powershell -Command "wget -uri 'https://packages.docker.com/1.11/builds/windows/amd64/docker-1.11.2-cs5.exe' -OutFile $env:ProgramFiles\docker\docker.exe"
