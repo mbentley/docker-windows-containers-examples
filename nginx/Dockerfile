@@ -10,4 +10,4 @@ COPY ./html /nginx/nginx-1.9.3/html/
 
 WORKDIR /nginx/nginx-1.9.3
 EXPOSE 80
-CMD nginx.exe
+ENTRYPOINT ["nginx.exe"]
