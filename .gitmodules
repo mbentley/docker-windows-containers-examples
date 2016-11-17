@@ -1,0 +1,3 @@
+[submodule "iis-docker"]
+	path = iis-docker
+	url = git@github.com:Microsoft/iis-docker.git
