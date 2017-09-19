@@ -1,0 +1,18 @@
+version: "3.2"
+
+services:
+  app:
+    image: microsoft/iis:nanoserver
+    deploy:
+      endpoint_mode: dnsrr
+      mode: replicated
+      replicas: 1
+      labels:
+        - "com.docker.ucp.mesh.http.80=internal_port=80,external_route=http://iis.demo.dckr.org"
+        - "com.docker.ucp.access.label=/"
+    networks:
+      - ucp-hrm
+
+networks:
+  ucp-hrm:
+    external: true
