@@ -2,9 +2,9 @@ version: "3.2"
 
 services:
   app:
-    image: microsoft/iis:nanoserver
+    image: dtr.demo.dckr.org/official/iis:nanoserver
     deploy:
-      endpoint_mode: dnsrr
+      endpoint_mode: vip
       mode: replicated
       replicas: 1
       labels:
